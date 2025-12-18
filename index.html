@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Гороскоп на сьогодні</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <h1>Гороскоп на сьогодні</h1>
+  <p>Оберіть знак зодіаку</p>
+</header>
+
+<main>
+  <div class="select-box">
+    <select id="zodiac">
+      <option value="">-- Оберіть знак --</option>
+      <option value="aries">Овен</option>
+      <option value="taurus">Телець</option>
+      <option value="gemini">Близнюки</option>
+    </select>
+  </div>
+
+  <div id="aries" class="card">
+    <img src="images/aries.png" alt="Овен">
+    <h2>Овен</h2>
+    <p>Сьогодні гарний день для нових починань.</p>
+  </div>
+
+  <div id="taurus" class="card">
+    <img src="images/taurus.png" alt="Телець">
+    <h2>Телець</h2>
+    <p>Зосередьтесь на фінансах і стабільності.</p>
+  </div>
+
+  <div id="gemini" class="card">
+    <img src="images/gemini.png" alt="Близнюки">
+    <h2>Близнюки</h2>
+    <p>Спілкування принесе нові можливості.</p>
+  </div>
+</main>
+
+<script>
+  const select = document.getElementById("zodiac");
+  const cards = document.querySelectorAll(".card");
+
+  select.addEventListener("change", function () {
+    cards.forEach(card => card.style.display = "none");
+
+    if (this.value !== "") {
+      document.getElementById(this.value).style.display = "block";
+    }
+  });
+</script>
+
+</body>
+</html>
